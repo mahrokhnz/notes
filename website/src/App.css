@@ -1,0 +1,96 @@
+:root {
+  --logo-color: #ebb800;
+  --gray-8: #c7c7cc;
+  --gray-9: #d1d1d6;
+  --gray-10: #e5e5ea;
+}
+
+.homePage {
+  display: flex
+}
+
+.notesList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 300px;
+  border-right: 1px gray solid;
+  padding: 10px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.search {
+  border: none;
+  outline: none;
+  background-color: var(--gray-8);
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.note {
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: background-color 0.1s ease-in-out;
+  min-height: 56px;
+}
+
+.note:hover {
+  background: var(--gray-10)
+}
+
+.note:hover .default {
+  background-color: var(--gray-9)
+}
+
+.default:hover {
+  background-color: var(--gray-8)
+}
+
+.form {
+  flex-grow: 1;
+  padding: 10px
+}
+
+.tools {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 40px;
+  color: var(--logo-color);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+i {
+  font-size: 18px
+}
+
+i:hover {
+  background-color: var(--gray-10)
+}
+
+.content {
+  gap: 15px;
+  padding: 0 20px;
+  white-space: pre-wrap;
+  outline: none
+}
+
+div {
+  border: none;
+  outline: none
+}

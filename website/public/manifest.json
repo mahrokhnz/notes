@@ -1,0 +1,21 @@
+{
+  "short_name": "Note App",
+  "name": "Note Application",
+  "description": "A basic react application",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ebb800",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/static/images/logo.png",
+      "sizes": "600x600",
+      "type": "image/png"
+    }
+  ]
+}
