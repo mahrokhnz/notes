@@ -4,11 +4,14 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import lodash from 'lodash';
 import { FaRegTrashCan } from "react-icons/fa6";
 import { FaPenToSquare } from "react-icons/fa6";
+import useOnlineStatus from "./network";
 
 function App() {
   const [notes, setNotes] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
   const [content, setContent] = useState(null);
+
+  const isOnline = useOnlineStatus()
 
   const elementRef = useRef(null);
 
@@ -90,8 +93,10 @@ function App() {
 
     if (!ignore) {
       getNotes();
+    }
 
-      ignore = true;
+    return () => {
+        ignore = true
     }
   }, [])
 
