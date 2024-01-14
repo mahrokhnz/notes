@@ -1,12 +1,10 @@
 import axios from "axios";
 
-export default function createNote(title, isOnline = true) {
+export default function deleteNote(id, isOnline = true) {
   return new Promise((resolve, reject) => {
     if (isOnline) {
       void axios
-        .put("http://localhost:3030/notes", {
-          title,
-        })
+        .delete(`http://localhost:3030/notes/${id}`)
         .then((res) => {
           if (res.data.status === "ok") {
             resolve(res.data);
@@ -14,7 +12,7 @@ export default function createNote(title, isOnline = true) {
         })
         .catch(reject);
     } else {
-      console.log(`${isOnline} Create`);
+      console.log(`${isOnline} Delete`);
     }
   });
 }

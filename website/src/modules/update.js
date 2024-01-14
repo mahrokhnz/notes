@@ -1,11 +1,13 @@
 import axios from "axios";
 
-export default function createNote(title, isOnline = true) {
+export default function updateNote(id, title, body, isOnline = true) {
   return new Promise((resolve, reject) => {
     if (isOnline) {
       void axios
-        .put("http://localhost:3030/notes", {
+        .post("http://localhost:3030/notes", {
+          id,
           title,
+          body,
         })
         .then((res) => {
           if (res.data.status === "ok") {
@@ -14,7 +16,7 @@ export default function createNote(title, isOnline = true) {
         })
         .catch(reject);
     } else {
-      console.log(`${isOnline} Create`);
+      console.log(`${isOnline} Update`);
     }
   });
 }
