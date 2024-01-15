@@ -69,11 +69,17 @@ function App() {
   );
 
   const getNotes = () => {
-    void axios.get("http://localhost:3030/notes").then((res) => {
-      setNotes(res.data);
+    if (isOnline) {
+      void axios.get("http://localhost:3030/notes").then((res) => {
+        setNotes(res.data);
 
-      localStorage.setItem("notes", JSON.stringify(res.data));
-    });
+        localStorage.setItem("notes", JSON.stringify(res.data));
+      });
+    } else {
+      if (localStorage.getItem("notes")) {
+        setNotes(JSON.parse(localStorage.getItem("notes")));
+      }
+    }
   };
 
   function selectNoteHandler(note) {

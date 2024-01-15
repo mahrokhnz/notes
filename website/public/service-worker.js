@@ -5,7 +5,7 @@ self.addEventListener("install", (event) => {
         "/",
         "/index.html",
         "/manifest.json",
-        // "/static/js/bundle.js",
+        "/static/favicon.ico",
       ]);
     }),
   );
