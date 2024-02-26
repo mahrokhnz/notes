@@ -163,6 +163,6 @@ function App() {
 export default App;
 
 //TODO: Work Offline Mode
-//TODO: Create Offline
-//TODO: Update Offline
-//TODO: Delete Offline
+//TODO: Create Offline Mode
+//TODO: Update Offline Mode
+//TODO: Delete Offline Mode
